@@ -2,8 +2,8 @@ package com.github.solairerove;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -33,8 +33,8 @@ public class PersonController {
         return people.findAll();
     }
 
-    @GetMapping("/add")
-    Mono<Person> addPerson() {
+    @PostMapping("/people")
+    Mono<Person> add() {
         return people.save(new Person("John", "Condom", 20, false));
     }
 }

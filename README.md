@@ -1,2 +1,2 @@
 # ideal-winner
-Hello Spring 5
+Spring Boot 2.0.0.BUILD-SNAPSHOT sandbox

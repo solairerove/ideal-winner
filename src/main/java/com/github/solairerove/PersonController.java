@@ -10,6 +10,7 @@ import reactor.core.publisher.Mono;
 
 import static org.springframework.http.MediaType.APPLICATION_JSON_UTF8_VALUE;
 
+// TODO migrate to reactive
 @RestController
 @RequestMapping(path = "/api", produces = APPLICATION_JSON_UTF8_VALUE)
 public class PersonController {
@@ -20,13 +21,6 @@ public class PersonController {
     public PersonController(PersonRepository people) {
         this.people = people;
     }
-
-//    @GetMapping("/people")
-//    Flux<String> nameByLastName(@RequestParam Mono<String> lastName) {
-//        return people
-//                .findByLastName(lastName)
-//                .map(Person::getFirstName);
-//    }
 
     @GetMapping("/people")
     Flux<Person> getAll() {
